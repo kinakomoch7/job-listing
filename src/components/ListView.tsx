@@ -1,7 +1,10 @@
+import useSWR from "swr"
 
-export const ListView = async() => {
+const fetcher = (url: string) => fetch(url).then(res => res.json())
 
-  const data = await fetch(`${process.env.HOME_URL}/api/getJobList`).then(res => res.json())
+export const ListView = () => {
+
+  const data = useSWR("/api/getJobList", fetcher).data
 
 
   if (!data) {
