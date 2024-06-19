@@ -1,9 +1,13 @@
 import { Header } from "@/components/Header"
+import { ListView } from "@/components/ListView"
 
-export const page = () => {
+const Home = () => {
   return (
     <div>
       <Header />
+      <ListView />
     </div>
   )
 }
+
+export default Home
