@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header"
 import { ListView } from "@/components/ListView"
 
-const Home = () => {
+export default function Home(){
   return (
     <div>
       <Header />
@@ -9,5 +9,3 @@ const Home = () => {
     </div>
   )
 }
-
-export default Home
