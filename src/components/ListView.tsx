@@ -1,16 +1,12 @@
-'use client'
-import useSWR from "swr"
+import { JobListingType } from "@/types/JobListingType"
 
-const fetcher = (url: string) => fetch(url).then(res => res.json())
+type Props = {
+  data: JobListingType[]
+}
 
-export const ListView = () => {
+export const ListView = (props: Props) => {
 
-  const data = useSWR("/api/getJobList", fetcher).data
-
-
-  if (!data) {
-    return <div>failed to load</div>
-  }
+  const { data } = props
 
   return (
     <div className="py-3">
