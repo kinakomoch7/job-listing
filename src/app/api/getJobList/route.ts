@@ -1,5 +1,5 @@
-import { conn } from "@/components/NeonDB";
 import { NextResponse } from "next/server";
+import { conn } from "../NeonDB";
 
 
 export async function GET(req: Request) {
