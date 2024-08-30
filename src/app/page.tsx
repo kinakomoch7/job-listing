@@ -3,7 +3,12 @@ import { ListView } from "@/components/ListView"
 
 export default async function Home(){
 
-  const data = await fetch(`${process.env.HOME_URL}/api/getJobList`).then(res => res.json())
+  const res = await fetch(`${process.env.HOME_URL}/api/getJobList`, {
+    next: {
+      revalidate:  604800 // 1週間（秒単位）
+    }
+  })
+  const data = await res.json()
 
   return (
     <div>
